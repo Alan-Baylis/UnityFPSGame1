@@ -6,4 +6,6 @@ public static class Inventory
 {
     //Constant ammo count
     public static int ammo = 0;
+    //Player health
+    public static int health = 100;
 }

@@ -34,6 +34,7 @@ public class Hud : MonoBehaviour
     }
     void StatDisplay()
     {
-        GUI.Box(new Rect(scrW, scrH, scrW, scrH), Inventory.ammo.ToString());
+        GUI.Box(new Rect(scrW, scrH, scrW, scrH * .5f), "Ammo: " + Inventory.ammo.ToString());
+        GUI.Box(new Rect(scrW, scrH * 2, scrW, scrH * .5f), "Health: " + Inventory.health.ToString());
     }
 }

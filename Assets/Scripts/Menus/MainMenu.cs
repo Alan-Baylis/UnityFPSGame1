@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         //After loading 500 chunks, game has loaded
-        if (world.chunks.Count > 500)
+        if (world.chunks.Count > 100)
         {
             loaded = true;
         }
