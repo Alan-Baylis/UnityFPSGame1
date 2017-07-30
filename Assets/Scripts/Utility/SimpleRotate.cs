@@ -12,7 +12,7 @@ public class SimpleRotate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.eulerAngles += new Vector3(x, y, z);
     }

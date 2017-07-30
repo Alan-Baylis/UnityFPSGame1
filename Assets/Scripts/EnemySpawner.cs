@@ -24,7 +24,9 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemy()
     {
         GameObject clone = Instantiate(enemy);
-        Vector3 randomPos = transform.position + Random.onUnitSphere * spawnRadius;
+        Vector3 startPos = transform.position;
+        startPos.y += 100;
+        Vector3 randomPos = startPos + Random.onUnitSphere * spawnRadius;
         clone.transform.position = randomPos;
         //Set enemy target
         clone.GetComponent<Enemy>().player = gameObject;
