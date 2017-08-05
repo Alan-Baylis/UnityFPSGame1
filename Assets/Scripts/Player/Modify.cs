@@ -11,6 +11,7 @@ public class Modify : MonoBehaviour
     void Start()
     {
     }
+
     void Update()
     {
         CollectBricks();
@@ -38,7 +39,7 @@ public class Modify : MonoBehaviour
     {
         //Use a bullet to shoot and only shoot if you have bullets
         Vector3 spawnPos = player.transform.position;
-        Quaternion spawnRot = player.transform.rotation;
+        Quaternion spawnRot = cam.transform.rotation;
         if (Input.GetMouseButtonDown(0) && Inventory.ammo >= 1)
         {
             Instantiate(bullet, spawnPos, spawnRot);

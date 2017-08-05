@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public bool inOptions = false;
     public World world;
     public Vector3 newCameraPos;
+    public FirstPersonCamera fpc;
 
     //Options menu member variables
     public AudioSource audi;
@@ -242,6 +243,7 @@ public class MainMenu : MonoBehaviour
     void InGameOptions()
     {
         SaveOptions();
+        fpc.inMenu = !fpc.inMenu;
         inOptions = !inOptions;
         Cursor.visible = !Cursor.visible;
         if (Cursor.lockState == CursorLockMode.None)
@@ -260,7 +262,6 @@ public class MainMenu : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        newCamera.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = !newCamera.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled;
     }
 
     // Save all options
@@ -273,7 +274,6 @@ public class MainMenu : MonoBehaviour
     void StartGame()
     {
         Time.timeScale = 1;
-        newCamera.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
         oldCamera.SetActive(false);
         newCamera.SetActive(true);
         started = true;
@@ -284,12 +284,15 @@ public class MainMenu : MonoBehaviour
         Inventory.health = 10;
         //Player score
         Inventory.score = 0;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        fpc.inMenu = false;
     }
 
     //End Game
     void GameOver()
     {
-        newCamera.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+        fpc.inMenu = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
