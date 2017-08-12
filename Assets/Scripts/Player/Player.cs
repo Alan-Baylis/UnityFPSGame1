@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // movement functions
         Movement();

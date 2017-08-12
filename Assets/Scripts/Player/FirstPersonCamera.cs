@@ -29,8 +29,8 @@ public class FirstPersonCamera : MonoBehaviour
         // Lock camera so you can't 360
         pitch = Mathf.Min(80, Mathf.Max(-80, pitch + -Input.GetAxis("Mouse Y")));
 
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
         transform.parent.rotation = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
-        transform.parent.rotation = Quaternion.Euler(new Vector3(0f, transform.parent.rotation.eulerAngles.y, 0f));
+        //transform.parent.rotation = Quaternion.Euler(new Vector3(0f, transform.parent.rotation.eulerAngles.y, 0f));
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
 }

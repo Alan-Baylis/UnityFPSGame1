@@ -126,16 +126,6 @@ public class MainMenu : MonoBehaviour
         {
             Application.Quit();
         }
-        /*
-		string[] menuItems = { "Start", "Options", "Exit" };
-        for (int i = 0; i < 3; i++)
-        {
-            if (GUI.Button(new Rect(scrW * 7.5f, scrH * 1.5f * i + (scrH * 4), scrW * 2, scrH), menuItems[i]))
-            {
-
-            }
-        }
-		*/
 
     }
 
